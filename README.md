@@ -1,44 +1,84 @@
-# vCard - Personal portfolio
+# Next.js, React & TailwindCSS Portfolio Project
 
-![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)
-![GitHub stars](https://img.shields.io/github/stars/codewithsadee/vcard-personal-portfolio?style=social)
-![GitHub forks](https://img.shields.io/github/forks/codewithsadee/vcard-personal-portfolio?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/codewithsadee_?style=social)](https://twitter.com/intent/follow?screen_name=codewithsadee_)
-[![YouTube Video Views](https://img.shields.io/youtube/views/SoxmIlgf2zM?style=social)](https://youtu.be/SoxmIlgf2zM)
+A simple portfolio starter theme built with Next.js, React and Tailwind CSS. This is the Next.js version of [vuejs-tailwindcss-portfolio](https://github.com/realstoman/vuejs-tailwindcss-portfolio).
 
-vCard is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
+![React-TailwindCSS-Portfolio](https://user-images.githubusercontent.com/16396664/146666086-28e88beb-c2f0-431f-adfb-2396d8f64c80.png)
 
-## Demo
+## Demo URL
 
-![vCard Desktop Demo](./website-demo-image/desktop.png "Desktop Demo")
-![vCard Mobile Demo](./website-demo-image/mobile.png "Mobile Demo")
+[https://nextjs-tailwindcss-portfolio.vercel.app](https://nextjs-tailwindcss-portfolio.vercel.app)
 
-## Prerequisites
+## Other versions of this project
 
-Before you begin, ensure you have met the following requirements:
+-   React Version: [https://github.com/realstoman/react-tailwindcss-portfolio](https://github.com/realstoman/react-tailwindcss-portfolio)
+-   Vue.js Version: [https://github.com/realstoman/vuejs-tailwindcss-portfolio](https://github.com/realstoman/vuejs-tailwindcss-portfolio)
+-   Nuxt.js Version: [https://github.com/realstoman/nuxtjs-tailwindcss-portfolio](https://github.com/realstoman/nuxtjs-tailwindcss-portfolio)
 
-* [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
+## Features
 
-## Installing vCard
+-   Built with [Next.js](https://nextjs.org) and [React](https://reactjs.org)
+-   [Tailwind CSS v3](https://tailwindcss.com)
+-   Custom Hooks
+-   Framer Motion Transitions & Animations
+-   Reusable Components
+-   Projects filter by category
+-   Projects filter by search
+-   Dark Mode
+-   Smooth scroll
+-   Counter
+-   Dynamic forms
+-   Back to top button
+-   Download file button
+-   Simple and responsive design
 
-To install **vCard**, follow these steps:
+### To Contribute to this project, read the [Contribution Guidlines](https://github.com/realstoman/nextjs-tailwindcss-portfolio/blob/main/CONTRIBUTING.md)
 
-Linux and macOS:
+## Setup
 
-```bash
-sudo git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
+1. Make sure you have Node JS installed. If you don't have it:
+
+-   [Download it from nodejs.org](https://nodejs.org)
+-   [Install it using NVM ](https://github.com/nvm-sh/nvm)
+-   If you're on Mac, Homebrew is a good option too:
+
+```
+brew install node
 ```
 
-Windows:
+2. Clone the repo:
 
-```bash
-git clone https://github.com/codewithsadee/vcard-personal-portfolio.git
+```
+git clone https://github.com/realstoman/nextjs-tailwindcss-portfolio.git
 ```
 
-## Contact
+3. Open the project folder:
 
-If you want to contact me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
+```
+cd nextjs-tailwindcss-portfolio
+```
 
-## License
+4. Install packages and dependencies:
 
-MIT
+```
+npm install
+```
+
+5. Start a local dev server at `http://localhost:3000`:
+
+```
+npm run dev
+```
+
+## Notes
+
+-   Always run `npm install` after pulling new changes
+-   I'll be constantly updating this repo as I'll be adding more sections to it, so please always check the projects section of this repo to see what tasks are under todo and in progress
+-   Coming Soon [I'll be doing a screencast](https://www.youtube.com/realstoman). Soon I'll be uploading a video to my YouTube channel where I'll be going through the process of creating this portoflio
+-   Illustrations from [unDraw](https://undraw.co) and [Freepik](https://freepik.com)
+-   Images from [Unsplash](https://unsplash.com)
+-   Feel free to use it as your own portfolio
+-   Contributions are welcome
+
+### License
+
+[MIT](https://github.com/realstoman/nextjs-tailwindcss-portfolio/blob/main/LICENSE)
