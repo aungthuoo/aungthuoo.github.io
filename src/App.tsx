@@ -9,6 +9,7 @@ import { ExampleTwoDeepComponent } from './components/ExampleTwoDeepComponent';
 import { SitemapLinkGenerator } from './components/SitemapLinkGenerator';
 import { PageNotFound } from './components/PageNotFound';
 import { Breadcrumbs } from './components/Breadcrumbs';
+import { Profile } from './components/Profile';
 
 const AppContainer = styled('div', {
   maxWidth: '540px',
@@ -61,6 +62,7 @@ export const App: React.VFC = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/example" component={ExampleComponent} />
+        <Route exact path="/profile" component={Profile} />
         <Route
           exact
           path="/example/two-deep"
