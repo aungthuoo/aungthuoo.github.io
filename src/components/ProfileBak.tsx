@@ -5,9 +5,6 @@ import { styled } from '../stitches.config';
 import { Blogs } from './Blogs';
 import { Journey } from './profile/Journey';
 import { Navbar } from './Navbar';
-import { User } from './profile/User';
-import { Projects } from './Projects';
-import { OurPartners } from './OurPartners';
 
 const LinkContainer = styled('span', {
   display: 'block',
@@ -20,11 +17,13 @@ const RepoReadmeLink: React.VFC = () => (
   </InteractiveLink>
 );
 
-export const Home: React.VFC = () => (
-  <div>
-    <User />
-    <Projects />
-    <OurPartners />
-    <Blogs />
+export const Profile: React.VFC = () => (
+  <div className="flex justify-center items-center bg-slate-100">
+    <div className="flex flex-col justify-center items-center  space-x-4">
+      <div className="box-border max-w-7xl mx-4 sm:columns-1 md:columns-2 lg:columns-3 xl:columns-3">
+        <Journey />
+        <Blogs />
+      </div>
+    </div>
   </div>
 );
