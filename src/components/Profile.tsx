@@ -6,7 +6,7 @@ import { Blogs } from './Blogs';
 import { Journey } from './profile/Journey';
 import { Navbar } from './Navbar';
 import { User } from './profile/User';
-import { Projects } from './Projects';
+import Projects from './Projects';
 import { OurPartners } from './OurPartners';
 
 const LinkContainer = styled('span', {
