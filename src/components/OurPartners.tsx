@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Project } from './Project';
+import Project from './Project';
 
 export const OurPartners: React.VFC = () => (
   <>

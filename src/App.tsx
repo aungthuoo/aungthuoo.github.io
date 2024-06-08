@@ -3,13 +3,12 @@ import { Switch, Route } from 'react-router-dom';
 import { DarkModeButton } from './ui/DarkModeButton';
 import { GitHubIconLink } from './ui/GitHubIconLink';
 import { globalCss, styled } from './stitches.config';
-import { Home } from './components/Home';
 import { ExampleComponent } from './components/ExampleComponent';
 import { ExampleTwoDeepComponent } from './components/ExampleTwoDeepComponent';
 import { SitemapLinkGenerator } from './components/SitemapLinkGenerator';
 import { PageNotFound } from './components/PageNotFound';
 import { Breadcrumbs } from './components/Breadcrumbs';
-import { Profile } from './components/Profile';
+import { Home } from './components/Home';
 
 const AppContainer = styled('div', {
   // maxWidth: '540px',
@@ -44,8 +43,7 @@ export const App: React.VFC = () => {
 
   return (
     <AppContainer>
-
-{/*       
+      {/*       
       <HeaderContainer>
         <H1>Aung Thu Oo | Profile</H1>
         <HeaderIconContainer>
@@ -65,12 +63,10 @@ export const App: React.VFC = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/example" component={ExampleComponent} />
 
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/projects" component={Profile} />
-        <Route exact path="/brands" component={Profile} />
-        <Route exact path="/blogs" component={Profile} />
-
-
+        <Route exact path="/profile" component={Home} />
+        <Route exact path="/projects" component={Home} />
+        <Route exact path="/brands" component={Home} />
+        <Route exact path="/blogs" component={Home} />
 
         <Route
           exact

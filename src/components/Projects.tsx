@@ -1,14 +1,19 @@
 import * as React from 'react';
-import { Project } from './Project';
+import Project from './Project';
 const { useState, useEffect } = React;
 
+interface DataItem {
+  title: string;
+  description: string;
+}
+
 const Projects: React.VFC = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<DataItem[] | null>(null);
 
   // Fetch the JSON data on component mount
   useEffect(() => {
     fetch(
-      'https://raw.githubusercontent.com/aungthuoo/apis/main/portfolio/bio.json',
+      'https://raw.githubusercontent.com/aungthuoo/apis/main/portfolio/projects.json',
     )
       .then((response) => response.json())
       .then((jsonData) => setData(jsonData))
@@ -25,12 +30,11 @@ const Projects: React.VFC = () => {
         Projects
       </div>
       <pre>{JSON.stringify(data, null, 2)}</pre>
+
       <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 p-2 xl:p-5">
-        <Project />
-        <Project />
-        <Project />
-        <Project />
-        <Project />
+        {data.map((item, index) => (
+          <Project key={index} item={item} />
+        ))}
       </ul>
     </div>
   );
