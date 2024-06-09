@@ -43,9 +43,7 @@ export const User: React.VFC = () => (
       </div>
 
       <div className="px-4 py-4">
-        <h2 className="text-3xl font-extrabold">
-          Web Design templates Selection
-        </h2>
+        <h2 className="text-3xl font-extrabold">About me</h2>
         <div className="py-4">
           <p>
             With over 15 years of experience in the software industry, I am a

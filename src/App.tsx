@@ -9,6 +9,7 @@ import { SitemapLinkGenerator } from './components/SitemapLinkGenerator';
 import { PageNotFound } from './components/PageNotFound';
 import { Breadcrumbs } from './components/Breadcrumbs';
 import { Home } from './components/Home';
+import Blogs from './Blogs';
 
 const AppContainer = styled('div', {
   // maxWidth: '540px',
@@ -55,18 +56,18 @@ export const App: React.VFC = () => {
         </HeaderIconContainer>
       </HeaderContainer> */}
 
-      <BreadcrumbsNav>
+      {/* <BreadcrumbsNav>
         <Breadcrumbs />
-      </BreadcrumbsNav>
+      </BreadcrumbsNav> */}
 
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/blogs" component={Blogs} />
         <Route exact path="/example" component={ExampleComponent} />
 
         <Route exact path="/profile" component={Home} />
         <Route exact path="/projects" component={Home} />
         <Route exact path="/brands" component={Home} />
-        <Route exact path="/blogs" component={Home} />
 
         <Route
           exact

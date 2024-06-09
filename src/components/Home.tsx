@@ -2,12 +2,12 @@ import * as React from 'react';
 import { InteractiveLink } from '../ui/InteractiveLink';
 import { P } from '../ui/Paragraph';
 import { styled } from '../stitches.config';
-import { Blogs } from './Blogs';
+import BlogsComponent from './BlogsComponent';
 import { Journey } from './profile/Journey';
 import { Navbar } from './Navbar';
 import { User } from './profile/User';
-import Projects from './Projects';
-import { OurPartners } from './OurPartners';
+import ProjectsComponent from './ProjectsComponent';
+import OurPartnersComponent from './OurPartnersComponent';
 
 const LinkContainer = styled('span', {
   display: 'block',
@@ -22,9 +22,10 @@ const RepoReadmeLink: React.VFC = () => (
 
 export const Home: React.VFC = () => (
   <div>
+    <Navbar />
     <User />
-    <Projects />
-    <OurPartners />
-    <Blogs />
+    <ProjectsComponent />
+    <OurPartnersComponent />
+    <BlogsComponent />
   </div>
 );
