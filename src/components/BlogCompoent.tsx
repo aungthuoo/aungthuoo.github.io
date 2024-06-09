@@ -1,12 +1,20 @@
 import * as React from 'react';
 import CategoryComponent from './CategoryComponent';
 
+interface Author {
+  name: string;
+  image: string;
+  link: string;
+  position: string;
+}
+
 interface Category {
   name: string;
 }
 interface Blog {
   title: string;
-  company: string;
+  author: Author;
+  date: string;
   categories: Category[];
   link: string;
   description: string;
@@ -21,31 +29,30 @@ interface ChildComponentProps {
 const BlogComponent: React.VFC<ChildComponentProps> = ({ blog }) => {
   return (
     <article className="mb-4 break-inside break-inside-avoid p-6 rounded-xl bg-white flex flex-col bg-clip-border max-w-md">
-      <div className="flex pb-6 items-center justify-between">
+      <div className="flex items-center justify-between">
         <div className="flex">
           <a className="inline-block mr-4" href="#">
             <img
               className="rounded-full max-w-none w-10 h-10"
-              src="/images/logos/softwarezay.png"
+              src={blog.author.image}
             />
           </a>
           <div className="flex flex-col">
             <div className="flex items-center">
               <a className="inline-block text-lg font-bold mr-2" href="#">
-                {blog.title}
+                {blog.author.name}
               </a>
-              {/* <span className="text-slate-500">Johnson &amp; Johnson</span> */}
+              <span className="text-slate-500">{blog.author.position}</span>
             </div>
-            <div className="text-slate-500">
-              {blog.categories &&
-                blog.categories.length > 0 &&
-                blog.categories.map((category, index) => (
-                  <CategoryComponent key={index} category={category} />
-                ))}
+            <div className="flex items-center">
+              <a className="inline-block text-slate-500 text-xs mr-2" href="#">
+                {blog.date}
+              </a>
             </div>
           </div>
         </div>
       </div>
+
       <div className="grid grid-cols-2 gap-1 content-stretch py-4">
         {blog.images.map((image, index) => (
           <a className="flex" href="#">
@@ -62,6 +69,14 @@ const BlogComponent: React.VFC<ChildComponentProps> = ({ blog }) => {
           </a>
         </div> */}
       <h2 className="text-3xl font-extrabold">{blog.title}</h2>
+      <div className="text-slate-500">
+        {blog.categories &&
+          blog.categories.length > 0 &&
+          blog.categories.map((category, index) => (
+            <CategoryComponent key={index} category={category} />
+          ))}
+      </div>
+
       <div className="py-4">
         <p>{blog.description}</p>
       </div>
