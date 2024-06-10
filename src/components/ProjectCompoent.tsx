@@ -32,7 +32,10 @@ const ProjectComponent: React.VFC<ChildComponentProps> = ({ project }) => {
           </a>
           <div className="flex flex-col">
             <div className="flex items-center">
-              <a className="inline-block text-lg font-bold mr-2" href="#">
+              <a
+                className="inline-block text-lg font-bold mr-2 cursor-pointer"
+                href={project.link}
+              >
                 {project.title}
               </a>
               {/* <span className="text-slate-500">Johnson &amp; Johnson</span> */}
@@ -49,7 +52,7 @@ const ProjectComponent: React.VFC<ChildComponentProps> = ({ project }) => {
       </div>
       <div className="grid grid-cols-2 gap-1 content-stretch py-4">
         {project.images.map((image, index) => (
-          <a className="flex" href="#">
+          <a className="flex" href={project.link}>
             <img className="object-cover object-cover" src={image} />
           </a>
         ))}
@@ -62,7 +65,11 @@ const ProjectComponent: React.VFC<ChildComponentProps> = ({ project }) => {
             />
           </a>
         </div> */}
-      <h2 className="text-3xl font-extrabold">{project.title}</h2>
+      <h2 className="text-3xl font-extrabold">
+        <a href={project.link} className="cursor-pointer">
+          {project.title}
+        </a>
+      </h2>
       <div className="py-4">
         <p>{project.description}</p>
       </div>

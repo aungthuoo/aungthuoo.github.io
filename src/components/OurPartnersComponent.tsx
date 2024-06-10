@@ -8,6 +8,7 @@ const OurPartnersComponent: React.VFC = () => {
   interface BrandImage {
     title: string;
     image: string;
+    link: string;
   }
   interface Partner {
     title: string;
@@ -45,13 +46,17 @@ const OurPartnersComponent: React.VFC = () => {
           <div className="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {partner.data.map((partner, index) => (
               <div className="text-center text-gray-500 dark:text-gray-400">
-                <img
-                  className="mx-auto max-h-14 mb-4 w-26 h-26 rounded-full"
-                  src={partner.image}
-                  alt={partner.title}
-                />
+                <a href={partner.link} target="_blank">
+                  <img
+                    className="mx-auto max-h-14 mb-4 w-26 h-26 rounded-full"
+                    src={partner.image}
+                    alt={partner.title}
+                  />
+                </a>
                 <h3 className="mb-1 text-lg font-bold tracking-tight text-gray-900 dark:text-white ">
-                  <a href="#">{partner.title}</a>
+                  <a href={partner.link} target="_blank">
+                    {partner.title}
+                  </a>
                 </h3>
                 {/* <p>CEO/Co-founder</p> */}
               </div>

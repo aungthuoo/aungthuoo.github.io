@@ -2,13 +2,20 @@ import * as React from 'react';
 import BlogComponent from './components/BlogCompoent';
 const { useState, useEffect } = React;
 
+interface Author {
+  name: string;
+  image: string;
+  link: string;
+  position: string;
+}
+
 interface Category {
   name: string;
 }
-interface Project {
+interface Blog {
   title: string;
-  client: string;
-  company: string;
+  author: Author;
+  date: string;
   categories: Category[];
   link: string;
   description: string;
@@ -16,7 +23,7 @@ interface Project {
 }
 
 const Blogs: React.VFC = () => {
-  const [blogs, setBlogs] = useState<Project[] | null>(null);
+  const [blogs, setBlogs] = useState<Blog[] | null>(null);
 
   // Fetch the JSON data on component mount
   useEffect(() => {

@@ -55,7 +55,7 @@ const BlogComponent: React.VFC<ChildComponentProps> = ({ blog }) => {
 
       <div className="grid grid-cols-2 gap-1 content-stretch py-4">
         {blog.images.map((image, index) => (
-          <a className="flex" href="#">
+          <a className="flex" href={blog.link}>
             <img className="object-cover object-cover" src={image} />
           </a>
         ))}
@@ -68,7 +68,11 @@ const BlogComponent: React.VFC<ChildComponentProps> = ({ blog }) => {
             />
           </a>
         </div> */}
-      <h2 className="text-3xl font-extrabold">{blog.title}</h2>
+      <h2 className="text-3xl font-extrabold">
+        <a href={blog.link} className="cursor-pointer">
+          {blog.title}
+        </a>
+      </h2>
       <div className="text-slate-500">
         {blog.categories &&
           blog.categories.length > 0 &&
