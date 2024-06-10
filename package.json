@@ -14,14 +14,17 @@
   "author": "Rafael Pedicini <rafael@rafgraph.dev>",
   "license": "MIT",
   "dependencies": {
+    "@babel/preset-react": "^7.24.7",
     "@radix-ui/react-icons": "^1.0.3",
     "@stitches/react": "^0.1.9",
     "axios": "^1.7.2",
+    "markdown-parser-react": "^1.1.2",
     "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-interactive": "^1.1.0",
-    "react-router-dom": "^5.2.0",
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^5.3.4",
     "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
