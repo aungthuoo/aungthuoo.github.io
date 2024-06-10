@@ -1,134 +1,1052 @@
-# Single Page Apps for GitHub Pages
 
-[Demo app][demoapp]
+<p align="center">
+  <img align="center" alt="Skills" src="./img/banners/main-banner-01.png" />
+</p>
 
-This is a lightweight solution for deploying single page apps with [GitHub Pages][ghpagesoverview]. You can easily deploy a [React][react] single page app with [React Router][reactrouter] `<BrowserRouter />`, like the one in the [demo app][demoapp], or a single page app built with any frontend library or framework.
 
-#### Why it's necessary
+<p align="center">
+  <a href="https://www.softwarezay.com/">Website</a> •
+  <a href="https://github.com/mrandrewmaung">Github</a> •
+  <a href="https://www.linkedin.com/in/aungthuoo/">Linkedin</a>
+</p>
 
-GitHub Pages doesn't natively support single page apps. When there is a fresh page load for a url like `example.tld/foo`, where `/foo` is a frontend route, the GitHub Pages server returns 404 because it knows nothing of `/foo`.
+<h1 align="center">Hi there 👋</h1>
 
-#### How it works
+As a __Full Stack Developer__ at Hana Microfinance, I leverage my full stack expertise to deliver scalable and user-friendly web and mobile applications that enhance financial inclusion and empowerment. With __over 15 years__ of experience in the software industry, I have a proven track record of leading and executing complex projects using cutting-edge technologies and best practices.
 
-When the GitHub Pages server gets a request for a path defined with frontend routes, e.g. `example.tld/foo`, it returns a custom `404.html` page. The [custom `404.html` page contains a script][404html] that takes the current url and converts the path and query string into just a query string, and then redirects the browser to the new url with only a query string and hash fragment. For example, `example.tld/one/two?a=b&c=d#qwe`, becomes `example.tld/?/one/two&a=b~and~c=d#qwe`.
+My core competencies include __PHP, React.js, Node.js, Vue.js, Laravel, AWS, and Docker__. I also have experience with __Flutter, Java, Microsoft Power Platform, Power App, and Socket.io__. I enjoy collaborating with cross-functional teams, learning new skills, and solving challenging problems. My mission is to create impactful and innovative solutions that make a difference in the lives of millions of people.
 
-The GitHub Pages server receives the new request, e.g. `example.tld/?/...`, ignores the query string and returns the `index.html` file, which has a [script that checks for a redirect in the query string][indexhtmlscript] before the single page app is loaded. If a redirect is present it is converted back into the correct url and added to the browser's history with `window.history.replaceState(...)`, but the browser won't attempt to load the new url. When the [single page app is loaded][indexhtmlspa] further down in the `index.html` file, the correct url will be waiting in the browser's history for the single page app to route accordingly. (Note that these redirects are only needed with fresh page loads, and not when navigating within the single page app once it's loaded).
+* 💼 Currently working at [Hana Microfinance](https://www.linkedin.com/company/hana-microfinance/mycompany/) <br/>
+* 🔖 Discover my [Curriculum Vitae](https://www.linkedin.com/in/aungthuoo/)<br/>
+* ✍🏻 I wrote dev articles on [softwarezay.com](https://softwarezay.com) <br/>
+* 📫 Contact me [koaungthuoo@gmail.com](koaungthuoo@gmail.com)
 
-## Usage instructions
+<!-- 
+<h3>To add my projects</h3>
+<table>
+  <thead align="center">
+    <tr border: none;>
+      <td><b>🎁 Projects</b></td>
+      <td><b>⭐ Stars</b></td>
+      <td><b>📚 Forks</b></td>
+      <td><b>🛎 Issues</b></td>
+      <td><b>📬 Pull requests</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/thmsgbrt/react-simple-pull-to-refresh"><b>React PullToRefresh component</b></a></td>
+      <td><img alt="Stars" src="https://img.shields.io/github/stars/thmsgbrt/react-simple-pull-to-refresh?style=flat-square&labelColor=343b41"/></td>
+      <td><img alt="Forks" src="https://img.shields.io/github/forks/thmsgbrt/react-simple-pull-to-refresh?style=flat-square&labelColor=343b41"/></td>
+      <td><img alt="Issues" src="https://img.shields.io/github/issues/thmsgbrt/react-simple-pull-to-refresh?style=flat-square&labelColor=343b41"/></td>
+      <td><img alt="Pull Requests" src="https://img.shields.io/github/issues-pr/thmsgbrt/react-simple-pull-to-refresh?style=flat-square&labelColor=343b41"/></td>
+    </tr>
+	  <tr>
+      <td><a href="https://github.com/thmsgbrt/Chrome-Extension-with-React-and-Typescript-Starter-Pack"><b>Typescript & React Chrome Extension Starter</b></a></td>
+      <td><img alt="Stars" src="https://img.shields.io/github/stars/thmsgbrt/Chrome-Extension-with-React-and-Typescript-Starter-Pack?style=flat-square&labelColor=343b41"/></td>
+      <td><img alt="Forks" src="https://img.shields.io/github/forks/thmsgbrt/Chrome-Extension-with-React-and-Typescript-Starter-Pack?style=flat-square&labelColor=343b41"/></td>
+      <td><img alt="Issues" src="https://img.shields.io/github/issues/thmsgbrt/Chrome-Extension-with-React-and-Typescript-Starter-Pack?style=flat-square&labelColor=343b41"/></td>
+      <td><img alt="Pull Requests" src="https://img.shields.io/github/issues-pr/thmsgbrt/Chrome-Extension-with-React-and-Typescript-Starter-Pack?style=flat-square&labelColor=343b41"/></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/thmsgbrt/nodejs-typescript-express-apollo-graphql-starter"><b>NodeJs Express TypeScript GraphQL Starter</b></a></td>
+      <td><img alt="Stars" src="https://img.shields.io/github/stars/thmsgbrt/nodejs-typescript-express-apollo-graphql-starter?style=flat-square&labelColor=343b41"/></td>
+      <td><img alt="Forks" src="https://img.shields.io/github/forks/thmsgbrt/nodejs-typescript-express-apollo-graphql-starter?style=flat-square&labelColor=343b41"/></td>
+      <td><img alt="Issues" src="https://img.shields.io/github/issues/thmsgbrt/nodejs-typescript-express-apollo-graphql-starter?style=flat-square&labelColor=343b41"/></td>
+      <td><img alt="Pull Requests" src="https://img.shields.io/github/issues-pr/thmsgbrt/nodejs-typescript-express-apollo-graphql-starter?style=flat-square&labelColor=343b41"/></td>
+    </tr>
+  </tbody>
+</table>
 
-_For general information on using GitHub Pages please see [Getting Started with GitHub Pages][ghpagesbasics], note that pages can be [User, Organization or Project Pages][ghpagestypes]_  
-&nbsp;
+ -->
 
-**Basic instructions** - there are two things you need from this repo for your single page app to run on GitHub Pages.
 
-1. Copy over the [`404.html`][404html] file to your repo as is
-   - Note that if you are setting up a Project Pages site and not using a [custom domain][customdomain] (i.e. your site's address is `username.github.io/repo-name`), then you need to set [`pathSegmentsToKeep` to `1` in the `404.html` file][pathsegmentstokeep] in order to keep `/repo-name` in the path after the redirect. If you are using React Router you'll need to tell it to use the `repo-name` as the `basename`, for example `<BrowserRouter basename="/repo-name" />`.
-2. Copy the [redirect script][indexhtmlscript] in the `index.html` file and add it to your `index.html` file - Note that the redirect script must be placed _before_ your single page app script in your `index.html` file.
-   &nbsp;
+<h3>My Work Experiences</h3>
+<table>
+  <thead align="center">
+    <tr border: none;>
+      <td>Logo</td>
+      <td><b>Description</b></td>
+      <td><b>Tech stack</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <img align="center" width="70px" alt="hana-microfinance" src="./img/company/hana_microfinance_logo.jpeg" />
+      </td>
+      <td>
+        <h3>Senior Developer</h3>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://hanamyanmar.com/"><b>Hana Microfinance · Full-time</b></a>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Jan 2024 - Present 
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Yangon, Myanmar 
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Projects 
+        <table>
+          <tbody>
+            <tr>
+              <td>- FinFlex integration</td>
+            </tr>
+            <tr>
+              <td>- Loan App (Online/ offline )</td>
+            </tr>
+            <tr>
+              <td>- Admin dashboard</td>
+            </tr>
+            <tr>
+              <td>- Internal softwares</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td>
+        Tech stack
+        <table>
+          <tbody>
+            <tr>
+              <td>- PHP (Laravel)</td>
+            </tr>
+            <tr>
+              <td>- React.js</td>
+            </tr>
+            <tr>
+              <td>- Node.js</td>
+            </tr>
+            <tr>
+              <td>- Docker</td>
+            </tr>
+            <tr>
+              <td>- AWS</td>
+            </tr>
+            <tr>
+              <td>- Microsoft Power Platform, Power Apps</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>
+        <img align="center" width="70px" alt="hana-microfinance" src="./img/company/softwarezay_logo.jpeg" />
+      </td>
+      <td>
+        <h3>Technical Lead</h3>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://softwarezay.com"><b>SoftwareZay · Self-employed</b></a>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Jan 2020 - Present · Over 4 years 
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Yangon, Myanmar 
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Projects 
+        <table>
+          <tbody>
+            <tr>
+              <td>- YaeOhSin Water Delivery ( Purified water delivery)</td>
+            </tr>
+            <tr>
+              <td>- RewardsTogether ( Loyalty App )</td>
+            </tr>
+            <tr>
+              <td>- OMG Game Shop ( Game credit sales )</td>
+            </tr>
+            <tr>
+              <td>- Ecommerce Apps </td>
+            </tr>
+            <tr>
+              <td>- Van Car Sales ( Offline / Online sales App )</td>
+            </tr>
+            <tr>
+              <td>- Delivery Apps ( Food Mall, Mall Plus)</td>
+            </tr>
+            <tr>
+              <td>- News App ( CMS )</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td>
+        Tech stack
+        <table>
+          <tbody>
+            <tr>
+              <td>- React.js </td>
+            </tr>
+            <tr>
+              <td>- Node.js </td>
+            </tr>
+            <tr>
+              <td>- Laravel (PHP)</td>
+            </tr>
+            <tr>
+              <td>- Vue.js </td>
+            </tr>
+            <tr>
+              <td>- Amazon Web Service (AWS)</td>
+            </tr>
+            <tr>
+              <td>- MySQL</td>
+            </tr>
+            <tr>
+              <td>- Git</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>
+        <img align="center" width="70px" alt="hana-microfinance" src="./img/company/onenex_logo.jpeg" />
+      </td>
+      <td>
+        <h3>Sr. Software Engineer</h3>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://www.onenex.co/"><b>Onenex (YOMA Group of Companies)· Full-time</b></a>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Jan 2023 - Dec 2023 · 1 yr
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Yangon, Myanmar · On-site
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Projects 
+        <table>
+          <tbody>
+            <tr>
+              <td>- Pocket (Loyalty Point App)</td>
+            </tr>
+            <tr>
+              <td>- Yoma Connect (HR Software)</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td>
+        Tech stack
+        <table>
+          <tbody>
+            <tr>
+              <td>- PHP (Laravel)</td>
+            </tr>
+            <tr>
+              <td>- Vue.js</td>
+            </tr>
+            <tr>
+              <td>- Node.js</td>
+            </tr>
+            <tr>
+              <td>- CI/CD</td>
+            </tr>
+            <tr>
+              <td>- Amazon Web Service (AWS)</td>
+            </tr>
+            <tr>
+              <td>- MySQL</td>
+            </tr>
+            <tr>
+              <td>- Git</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>
+        <img align="center" width="70px" alt="hana-microfinance" src="./img/company/mallplus_logo.jpeg" />
+      </td>
+      <td>
+        <h3>Full Stack Developer</h3>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://mallplusmm.com/"><b>MallPlus Myanmar · Contract</b></a>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Nov 2022 - Dec 2023 · 1 yr 2 mos
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Yangon, Myanmar · Remote
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Projects 
+        <table>
+          <tbody>
+            <tr>
+              <td>- Food Order Customer App</td>
+            </tr>
+            <tr>
+              <td>- Restaurant App</td>
+            </tr>
+            <tr>
+              <td>- Biker/ Rider Food Delivery App</td>
+            </tr>
+            <tr>
+              <td>- Food Order Website</td>
+            </tr>
+            <tr>
+              <td>- Order Management Dashboard</td>
+            </tr>
+            <tr>
+              <td>- Realtime Rider Tracking Website</td>
+            </tr>
+            <tr>
+              <td>- Express Delivery Website & Delivery Management</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td>
+        Tech stack
+        <table>
+          <tbody>
+            <tr>
+              <td>- PHP (Laravel), React.js, Vue.js, Node.js</td>
+            </tr>
+            <tr>
+              <td>- Flutter (Android, iOS)</td>
+            </tr>
+            <tr>
+              <td>- Docker</td>
+            </tr>
+            <tr>
+              <td>- CI/CD, DigitalOcean</td>
+            </tr>
+            <tr>
+              <td>- MySQL</td>
+            </tr>
+            <tr>
+              <td>- Git</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>
+        <img align="center" width="70px" alt="hana-microfinance" src="./img/company/foodmall_logo.jpeg" />
+      </td>
+      <td>
+        <h3>Full Stack Developer</h3>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://www.facebook.com/foodmallmm/"><b>Food Mall Myanmar · Full-time</b></a>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Jan 2019 - Mar 2023 · 4 yrs 3 mos
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Yangin, Yangon Region, Myanmar · On-site
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Projects 
+        <table>
+          <tbody>
+            <tr>
+              <td>- Food Order Customer App</td>
+            </tr>
+            <tr>
+              <td>- Restaurant App</td>
+            </tr>
+            <tr>
+              <td>- Biker/ Rider Food Delivery App</td>
+            </tr>
+            <tr>
+              <td>- Food Order Website</td>
+            </tr>
+            <tr>
+              <td>- Order Management Dashboard</td>
+            </tr>
+            <tr>
+              <td>- Realtime Rider Tracking Website</td>
+            </tr>
+            <tr>
+              <td>- Express Delivery Website & Delivery Management</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td>
+        Tech stack
+        <table>
+          <tbody>
+            <tr>
+              <td>- PHP (Laravel), React.js, Vue.js, Node.js</td>
+            </tr>
+            <tr>
+              <td>- Flutter (Android, iOS)</td>
+            </tr>
+            <tr>
+              <td>- Docker</td>
+            </tr>
+            <tr>
+              <td>- CI/CD, DigitalOcean</td>
+            </tr>
+            <tr>
+              <td>- MySQL</td>
+            </tr>
+            <tr>
+              <td>- Git</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>
+        <img align="center" width="70px" alt="hana-microfinance" src="./img/company/lamm_logo.jpeg" />
+      </td>
+      <td>
+        <h3>𝗙𝘂𝗹𝗹 𝗦𝘁𝗮𝗰𝗸 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲r</h3>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://www.facebook.com/lammmyanmar/"><b>LAM Myanmar · Full-time</b></a>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Sep 2017 - Jan 2019 · 1 yr 5 mos
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Yangon · On-site
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Projects 
+        <table>
+          <tbody>
+            <tr>
+              <td>- Gym Management App</td>
+            </tr>
+            <tr>
+              <td>- Real Estate Website</td>
+            </tr>
+            <tr>
+              <td>- Real Estate Customer App (Android, iOS)</td>
+            </tr>
+            <tr>
+              <td>- Loyalty Website</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td>
+        Tech stack
+        <table>
+          <tbody>
+            <tr>
+              <td>- Angular</td>
+            </tr>
+            <tr>
+              <td>- Android And IOS with (NativeScript + Vue.js/ Flutter)</td>
+            </tr>
+            <tr>
+              <td>- Laravel</td>
+            </tr>
+            <tr>
+              <td>- Vue.js </td>
+            </tr>
+            <tr>
+              <td>- React.js</td>
+            </tr>
+            <tr>
+              <td>- Git, Bitbucket</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>
+        <img align="center" width="70px" alt="hana-microfinance" src="./img/company/mmrd_logo.jpeg" />
+      </td>
+      <td>
+        <h3>Senior Web Developer</h3>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://www.mmrdrs.com/"><b>Myanmar Marketing Research & Development Ltd. (MMRD) · Full-time</b></a>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Dec 2015 - Oct 2017 · 1 yr 11 mos
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Yangon, Myanmar · On-site
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Projects 
+        <table>
+          <tbody>
+            <tr>
+              <td>- Directory Website Management (Big data)</td>
+            </tr>
+            <tr>
+              <td>- Advertising Management Software</td>
+            </tr>
+            <tr>
+              <td>- https://www.yangondirectory.com</td>
+            </tr>
+            <tr>
+              <td>- https://www.mandalaydirectory.com</td>
+            </tr>
+            <tr>
+              <td>- https://www.mandalaydirectory.com</td>
+            </tr>
+            <tr>
+              <td>- https://www.automobiledirectory.com.mm</td>
+            </tr>
+            <tr>
+              <td>- https://www.buildersguide.com.mm</td>
+            </tr>
+            <tr>
+              <td>- https://www.edge.com.mm</td>
+            </tr>
+            <tr>
+              <td>- https://www.foodindustrydirectory.com.mm</td>
+            </tr>
+            <tr>
+              <td>- https://www.sayar.com.mm</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td>
+        Tech stack
+        <table>
+          <tbody>
+            <tr>
+              <td>- PHP (Joomla, Laravel )</td>
+            </tr>
+            <tr>
+              <td>- MySql</td>
+            </tr>
+            <tr>
+              <td>- MSSql</td>
+            </tr>
+            <tr>
+              <td>- C#</td>
+            </tr>
+            <tr>
+              <td>- jQuery</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>
+        <img align="center" width="70px" alt="hana-microfinance" src="./img/company/mit_logo.jpeg" />
+      </td>
+      <td>
+        <h3>Senior Web Developer</h3>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://www.mit.com.mm/"><b>Myanmar Information Technology Pte Ltd · Full-time</b></a>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Dec 2011 - Oct 2015 · 3 yrs 11 mos
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        MICT park, Yangon, Myanmar · On-site
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Projects 
+        <table>
+          <tbody>
+            <tr>
+              <td>- ERP V5 Accounting System</td>
+            </tr>
+            <tr>
+              <td>- YKKO Waiter App ( Web App )</td>
+            </tr>
+            <tr>
+              <td>- Banking Softwares</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td>
+        Tech stack
+        <table>
+          <tbody>
+            <tr>
+              <td>- J2EE</td>
+            </tr>
+            <tr>
+              <td>-  jQuery, JavaScript</td>
+            </tr>
+            <tr>
+              <td>- JAVA</td>
+            </tr>
+            <tr>
+              <td>- C#</td>
+            </tr>
+            <tr>
+              <td>- Crystal Report, Jasper Report</td>
+            </tr>
+            <tr>
+              <td>- Google GWT</td>
+            </tr>
+            <tr>
+              <td>- Subversion</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td>
+        <img align="center" width="70px" alt="hana-microfinance" src="./img/company/galaxy_logo.jpeg" />
+      </td>
+      <td>
+        <h3>Programmer</h3>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <a href="https://galaxy.com.mm/"><b>Galaxy Software Co.,Ltd · Full-time</b></a>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        2006 - 2009 · 3 yrs
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Yangon, Myanmar · On-site
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        Projects 
+        <table>
+          <tbody>
+            <tr>
+              <td>- iStock, Inventory Control System</td>
+            </tr>
+            <tr>
+              <td>- iLedger, Accounting System</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td>
+        Tech stack
+        <table>
+          <tbody>
+            <tr>
+              <td>- C#</td>
+            </tr>
+            <tr>
+              <td>- Microsoft Access</td>
+            </tr>
+            <tr>
+              <td>- Visual Basic</td>
+            </tr>
+            <tr>
+              <td>- Microsoft SQL Server</td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</tr>
+<br/>
+<hr/>
 
-**Detailed instructions** - using this repo as a boilerplate for a React single page app hosted with GitHub Pages. Note that this boilerplate is written in TypeScript but is setup to accept JavaScript files as well. It was previously written in JS and if you prefer a JS only boilerplate you can use [version 6][spa-github-pages-v6].
 
-1. Clone this repo (`$ git clone https://github.com/rafgraph/spa-github-pages.git`)
-2. Delete the `.git` directory (`cd` into the `spa-github-pages` directory and run `$ rm -rf .git`)
-3. Instantiate the repository
-   - If you're using this boilerplate as a new repository
-     - `$ git init` in the `spa-github-pages` directory, and then `$ git add .` and `$ git commit -m "Add SPA for GitHub Pages boilerplate"` to initialize a fresh repository
-     - If this will be a Project Pages site, then change the branch name from `main` to `gh-pages` (`$ git branch -m gh-pages`), if this will be a User or Organization Pages site, then leave the branch name as `main`
-     - Create an empty repo on GitHub.com (don't add a readme, gitignore or license), and add it as a remote to the local repo (`$ git remote add origin <your-new-github-repo-url>`)
-     - Feel free to rename the local `spa-github-pages` directory to anything you want (e.g. `your-project-name`)
-   - If you're adding this boilerplate as the `gh-pages` branch of an existing repository
-     - Create and checkout a new orphaned branch named `gh-pages` for your existing repo (`$ git checkout --orphan gh-pages`), note that the `gh-pages` branch won't appear in the list of branches until you make your first commit
-     - Delete all of the files and directories (except the `.git` directory) from the directory of your existing repo (`$ git rm -rf .`)
-     - Copy all of the files and directories (including hidden dot files) from the cloned `spa-github-pages` directory into your project's now empty directory (`$ mv path/to/spa-github-pages/{.[!.],}* path/to/your-projects-directory`)
-     - `$ git add .` and `$ git commit -m "Add SPA for GitHub Pages boilerplate"` to instantiate the `gh-pages` branch
-4. Set up a custom domain (optional) - see GitHub Pages instructions for [setting up a custom domain][customdomain]
-   - Update the [`CNAME` file][cnamefile] with your custom domain, don't include `https://`, but do include a subdomain if desired, e.g. `www` or `your-subdomain`
-   - Update your `CNAME` and/or `A` record with your DNS provider
-   - Run `$ dig your-subdomain.your-domain.tld` to make sure it's set up properly with your DNS (don't include `https://`)
-5. Set up without using a custom domain (optional)
-   - Delete the [`CNAME` file][cnamefile]
-   - If you are creating a User or Organization Pages site, then that's all you need to do
-   - If you are creating a Project Pages site, (i.e. your site's address is `username.github.io/repo-name`):
-     - Set [`pathSegmentsToKeep` to `1` in the `404.html` file][pathsegmentstokeep] in order to keep `/repo-name` in the path after the redirect
-     - Add your `repo-name` to the absolute path of assets in `index.html`, change the [bundle.js src][indexhtmlspa] to `"/repo-name/build/bundle.js"`
-     - In React Router set the `basename` to `/repo-name` [here][browserrouter] like `<BrowserRouter basename="/repo-name" />`
-     - In the [start script][startscript] in `package.json` replace `--open` with `--open-page repo-name`
-     - In `webpack.config.js`:
-       - Add `repo-name` to the [`publicPath`][webpackpublicpath] like `publicPath: '/repo-name/build/'`
-       - Change the [`historyApiFallback rewrites`][webpackdevrewrites] to `rewrites: [{ from: /\/repo-name\/[^?]/, to: '/404.html' }]`
-6. Run `$ npm install` to install React and other dependencies, and then run `$ npm run build` to update the build
-7. `$ git add .` and `$ git commit -m "Update boilerplate for use with my domain"` and then push to GitHub (`$ git push origin gh-pages` for Project Pages or `$ git push origin main` for User or Organization Pages) - the example site should now be live on your domain
-8. Create your own site
-   - Write your own React components, create your own routes, and add your own style
-     - Note that the example site is styled with [Stitches][stitches] and uses [React Interactive][reactinteractive] for the links and other interactive components.
-   - Change the [title in `index.html`][indexhtmltitle] and the [title in `404.html`][404htmltitle] to your site's title
-   - Remove the [favicon links][favicon] from the header of `index.html` and the [`favicon` directory][favicondir].
-   - Update or delete [`robots.txt`][robots] and [`sitemap.txt`][sitemap] as you see fit (see SEO section below for more info)
-   - Change the readme, license and package.json as you see fit
-   - For testing changes locally see development environment info below
-   - To publish your changes to GitHub Pages run `$ npm run build` (this runs `webpack -p` for [production][webpackproduction]) to update the build, then `$ git commit` and `$ git push` to make your changes live
+<h3>My Educations</h3>
+<table>
+  <thead align="center">
+    <tr border: none;>
+      <td><b></b></td>
+      <td><b></b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <img align="center" width="70px" alt="yu" src="./img/university/yu.jpeg" />
+      </td>
+      <td>
+        <a href="#"><b>University of Yangon</b></a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+        <b>Post Graduate Deploma in Computer (PGDCA)</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+        <b>Jan 2012 - Dec 2014</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img align="center" width="70px" alt="yieco" src="./img/university/yieco.png" />
+      </td>
+      <td>
+        <a href="#"><b>Yangon Institute of Economics</b></a>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <b>B.Com</b>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      </td>
+      <td>
+        <b>2002 - 2005</b>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+<hr/>
 
-**Serving from the `/docs` folder on the `main` branch** - alternatively you can serve your site from the `/docs` folder instead of the root folder while your source code remains in the root folder.
 
-1. After following the previous set of instructions for using this repo as a boilerplate, create a `/docs` folder in the root and move `index.html`, `404.html` and the `/build` folder into `/docs`
-2. Add `--content-base docs/` to the [start script][startscript] in `package.json`
-3. In `webpack.config.js` change the [output path][webpackoutputpath] to `` path: `${__dirname}/docs/build`, ``
-4. On GitHub in your repo settings select the `/docs` folder as the source for GitHub Pages
 
-#### Development environment
 
-I have included `webpack-dev-server` for testing changes locally. It can be accessed by running `$ npm start` (details below). Note that `webpack-dev-server` automatically creates a new bundle whenever the source files change and serves the bundle from memory, so you'll never see the bundle as a file saved to disk.
 
-- `$ npm start` runs the [start script][startscript] in `package.json`, which runs the command `$ webpack-dev-server --host 0.0.0.0 --disable-host-check --open`
-  - `--host 0.0.0.0 --disable-host-check` is so you can access the site on your local network from other devices at `http://[YOUR COMPUTER'S IP ADDRESS]:8080`
-  - `--open` will open automatically open the site in your browser
-- `webpack-dev-server` will serve `index.html` at `http://localhost:8080` (port `8080` is the default). Note that you must load the `index.html` from the server and not just open it directly in the browser or the scripts won't load.
+<h3>My Skills</h3>
+<p align="center">
+  <img align="center" alt="Skills" src="https://github.com/viclafouch/viclafouch/blob/master/img/pack.png" />
+</p>
+<br/>
+<hr/>
 
-#### SEO
 
-When I first created this solution in 2016 Google treated the redirect in `404.html` the same as a 301 redirect and indexed pages without issue. Around 2019 Google changed their algorithm and no longer follows redirects in `404.html`. In order to have all the pages on your site indexed by Google you need to create a `robots.txt` and `sitemap.txt` file to let Google know what pages exist. The [`robots.txt`][robots] file needs to contain the location of the sitemap, and the [`sitemap.txt`][sitemap] file needs to contain the redirect links for each page of your site so the crawler doesn't get a 404 response when it requests the page. To make this easier I created a [sitemap link generator][sitemaplinkgenerator] that transforms normal links into redirect links to use in the sitemap. I have done this for the demo site (this repo) and you can see the [pages indexed here][googlesitesearch]. Note that since Google is no longer associating the redirect links with the real paths, incoming links from other sites won't help your site's page rank. If you are creating a site where page rank on generic search terms is important, then I'd suggest looking for another solution. Some options are using GitHub Pages with a static site generator like [Gatsby][gatsby] which generates an `html` file for each page as part of its build process, or hosting your single page app on a service that has native support for spas, like [Netlify][netlify].
+# 📝 My JavaScript.js skills
 
-#### Miscellaneous
+<p align="center">
+  <img align="center" alt="Skills" src="https://raw.githubusercontent.com/aungthuoo/aungthuoo/main/img/banners/my-javascript-skills.png" />
+</p>
+<p>
+I am highly proficient in JavaScript, possessing a deep understanding of its language fundamentals, modern features, and best practices. With extensive experience, I have honed my skills to tackle a wide range of programming challenges with confidence and efficiency.
+  
+</p>
 
-- The `.nojekyll` file in this repo turns off Jekyll for GitHub Pages
-- One of the great things about the GitHub Pages CDN is that all files are automatically compressed with gzip, so no need to worry about compressing your JavaScript, HTML or CSS files for production
+## 📝 <ins>I know those topics very well.</ins> 
 
-<!-- links to within repo -->
+### :heavy_check_mark: &nbsp;[JavaScript Arrow Functions vs Regular Functions](https://gist.github.com/aungthuoo/4258fefc276d137497cc44f82ea299bc) 
+In JavaScript, there are two main ways of writing functions. I can create functions using the regular function syntax. Or I can use the arrow function syntax.
 
-[indexhtmltitle]: https://github.com/rafgraph/spa-github-pages/blob/gh-pages/index.html#L6
-[favicon]: https://github.com/rafgraph/spa-github-pages/blob/gh-pages/index.html#L13
-[indexhtmlscript]: https://github.com/rafgraph/spa-github-pages/blob/gh-pages/index.html#L21-L42
-[indexhtmlspa]: https://github.com/rafgraph/spa-github-pages/blob/gh-pages/index.html#L49
-[404html]: https://github.com/rafgraph/spa-github-pages/blob/gh-pages/404.html
-[404htmltitle]: https://github.com/rafgraph/spa-github-pages/blob/gh-pages/404.html#L5
-[pathsegmentstokeep]: https://github.com/rafgraph/spa-github-pages/blob/gh-pages/404.html#L25
-[browserrouter]: https://github.com/rafgraph/spa-github-pages/blob/gh-pages/src/index.tsx#L8
-[webpackoutputpath]: https://github.com/rafgraph/spa-github-pages/blob/gh-pages/webpack.config.js#L6
-[webpackpublicpath]: https://github.com/rafgraph/spa-github-pages/blob/gh-pages/webpack.config.js#L7
-[webpackdevrewrites]: https://github.com/rafgraph/spa-github-pages/blob/gh-pages/webpack.config.js#L48
-[startscript]: https://github.com/rafgraph/spa-github-pages/blob/gh-pages/package.json#L7
-[cnamefile]: https://github.com/rafgraph/spa-github-pages/blob/gh-pages/CNAME
-[favicondir]: https://github.com/rafgraph/spa-github-pages/tree/gh-pages/favicon
-[robots]: https://github.com/rafgraph/spa-github-pages/blob/gh-pages/robots.txt
-[sitemap]: https://github.com/rafgraph/spa-github-pages/blob/gh-pages/sitemap.txt
-[spa-github-pages-v6]: https://github.com/rafgraph/spa-github-pages/tree/v6.0.0
+### :heavy_check_mark: &nbsp;[JavaScript Spread and Rest Operators: A Guide](https://gist.github.com/aungthuoo/8031a2ed79c2e48823c56586776b2a9b)
+Spread and rest operators are two of the most useful pieces of shorthand in JavaScript. Spread operators allow us to expand an array or object into its individual elements, while rest operators allow us to condense multiple elements into a single array or object.
 
-<!-- links to github docs -->
+### :heavy_check_mark: &nbsp;[Which is Faster in JavaScript map vs. forEach?](https://gist.github.com/aungthuoo/9a6c87f401ca702e9b3aaf0a35f840a8)
+Both map() and forEach() are array methods in JavaScript that are used to iterate over each item in an array. However, they have different functionalities and therefore perform differently in certain scenarios. I will explore the differences between map() and forEach() and how they affect performance.
 
-[ghpagesoverview]: https://pages.github.com/
-[ghpagesbasics]: https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/getting-started-with-github-pages
-[ghpagestypes]: https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/about-github-pages#types-of-github-pages-sites
-[customdomain]: https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site
+<br/>
+<div align="center">
+  <b><a href="https://gist.github.com/aungthuoo/5fe500fed7863cacc2157f16c50a3263">[ View more ]</a></b>
+</div>
+<br/>
+<hr/>
 
-<!-- other links -->
 
-[demoapp]: https://spa-github-pages.rafgraph.dev
-[sitemaplinkgenerator]: https://spa-github-pages.rafgraph.dev/sitemap-link-generator
-[react]: https://github.com/facebook/react
-[reactrouter]: https://github.com/ReactTraining/react-router
-[webpackproduction]: https://webpack.js.org/guides/production-build/#the-automatic-way
-[stitches]: https://stitches.dev/
-[reactinteractive]: https://github.com/rafgraph/react-interactive
-[googlesitesearch]: https://www.google.com/search?q=site%3Aspa-github-pages.rafgraph.dev
-[gatsby]: https://github.com/gatsbyjs/gatsby
-[netlify]: https://www.netlify.com/blog/2020/04/07/creating-better-more-predictable-redirect-rules-for-spas
+
+
+# 📝 My Node.js skills
+
+<p align="center">
+  <img align="center" alt="Skills" src="https://raw.githubusercontent.com/aungthuoo/aungthuoo/main/img/banners/my-node-js-skills.png" />
+</p>
+<p>
+I am highly proficient in Node.js, with a deep understanding of its core principles and advanced functionalities. Over the course of my experience, I have developed a robust skill set that enables me to tackle a wide range of backend development tasks with efficiency and precision.
+  
+</p>
+
+## 📝 <ins>I know those topics very well.</ins> 
+
+### :heavy_check_mark: &nbsp;[Cross-Origin Resource Sharing (CORS) in a Node.js application](https://gist.github.com/aungthuoo/d1818cd12ce5221075d89659f620a00d) 
+### :heavy_check_mark: &nbsp;[Node.js JWT Basic example](https://gist.github.com/aungthuoo/3c433d85b7d983b62c5a1c99339eb806)
+### :heavy_check_mark: &nbsp;[Node.js sequelize install](https://gist.github.com/aungthuoo/35e7c28c16a162e861e170d6ff1c6ac0)
+
+
+<br/>
+<div align="center">
+  <b><a href="https://gist.github.com/aungthuoo/3ee7e3bad5e9802245a2b8d15817a86a">[ View more ]</a></b>
+</div>
+<br/>
+<hr/>
+
+
+
+# 📝 My React.js skills
+
+<p align="center">
+  <img align="center" alt="Skills" src="https://raw.githubusercontent.com/aungthuoo/aungthuoo/main/img/banners/my-react-js-skills.png" />
+</p>
+<p>
+  I am highly proficient in React.js, possessing a comprehensive understanding of its core concepts and advanced features. With extensive hands-on experience, I have developed a deep familiarity with React's component-based architecture, state management techniques, and modern development practices.
+  
+</p>
+
+## 📝 <ins>I know those topics very well.</ins> 
+
+### :heavy_check_mark: &nbsp;[React.Js Internationalization / Change language simple example with React.js](https://gist.github.com/aungthuoo/244aedb71c9d3960a2ebd5ebe1beb965) 
+### :heavy_check_mark: &nbsp;[React.js fetch data with pagination](https://gist.github.com/aungthuoo/2873ae0aa19f4d8d1f3038c5f6ac27f9)
+We’re prepared to fetch data from the Hacker News API. Take a closer look at the data structure and observe how the Hacker News API returns more than a list of hits. 
+### :heavy_check_mark: &nbsp;[S.O.L.I.D: The 5 Golden Rules to Level Up Your Coding Skills](https://gist.github.com/aungthuoo/95731511a516316fe1b76c248a6cfde0)
+S.O.L.I.D principles are specifically designed to support the OOP (Object-Oriented Programming) paradigm. Hence, this article is designed for OOP developers who wish to level up their development skills and to write more elegant, maintainable and scalable code.
+
+<br/>
+<div align="center">
+  <b><a href="https://gist.github.com/aungthuoo/30348157c1b06d4eced69a59a145ac4d">[ View more ]</a></b>
+</div>
+<br/>
+<hr/>
+
+
+
+## 📝 My Blogs
+
+<p align="center">
+  <img align="center" alt="Skills" src="./img/banners/my-blogs.png" />
+</p>
+<p>
+  I possess extensive knowledge and experience in Node.js. Over the years, I have honed my skills through various projects and challenges, allowing me to confidently tackle complex tasks and optimize performance. From building scalable server-side applications to implementing efficient APIs
+</p>
+
+### :heavy_check_mark: &nbsp;[Which is Faster in JavaScript map vs. forEach?](https://gist.github.com/aungthuoo/9a6c87f401ca702e9b3aaf0a35f840a8)
+Both map() and forEach() are array methods in JavaScript that are used to iterate over each item in an array. However, they have different functionalities and therefore perform differently in certain scenarios. I will explore the differences between map() and forEach() and how they affect performance.
+
+### :heavy_check_mark: &nbsp;[Cross-Origin Resource Sharing (CORS) in a Node.js application](https://gist.github.com/aungthuoo/d1818cd12ce5221075d89659f620a00d) 
+
+### :heavy_check_mark: &nbsp;[S.O.L.I.D: The 5 Golden Rules to Level Up Your Coding Skills](https://gist.github.com/aungthuoo/95731511a516316fe1b76c248a6cfde0)
+S.O.L.I.D principles are specifically designed to support the OOP (Object-Oriented Programming) paradigm. Hence, this article is designed for OOP developers who wish to level up their development skills and to write more elegant, maintainable and scalable code.
+
+<br>
+<hr/>
+
+
+## 📝 My tech stack
+![image](https://img.shields.io/badge/redis-%23DD0031.svg?&style=for-the-badge&logo=redis&logoColor=white)
+![image](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![image](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![image](https://img.shields.io/badge/axios-671ddf?&style=for-the-badge&logo=axios&logoColor=white)
+![image](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white)
+![image](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![image](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![image](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![image](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+![image](https://img.shields.io/badge/Vue%20js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
+
+<br/>
+<br/>
+
